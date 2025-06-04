@@ -1,0 +1,24 @@
+{
+  "scopeName": "source.siemens-alarm-xml",
+  "patterns": [
+    {
+      "name": "keyword.control.xml",
+      "match": "</?[a-zA-Z0-9]+>"
+    },
+    {
+      "name": "entity.name.section.source-number",
+      "match": "(?<=<source>)\\d+"
+    },
+    {
+      "name": "constant.language.device-path",
+      "match": "(/PLC/PMC)"
+    },
+    {
+      "name": "string.translation.text",
+      "match": "(?<=<translation>)[^<]+"
+    }
+  ],
+  "repository": {},
+  "namespaces": [],
+  "uuid": "abcd1234-abcd-5678-abcd-12345678abcd"
+}

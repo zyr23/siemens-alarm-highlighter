@@ -1,0 +1,28 @@
+{
+  "name": "siemens-alarm-xml-highlighter",
+  "displayName": "Siemens Alarm XML Highlighter",
+  "description": "为西门子报警 XML 文件（TS格式）提供语法高亮。",
+  "version": "0.0.3",
+  "publisher": "your-name",
+  "engines": {
+    "vscode": "^1.50.0"
+  },
+  "categories": ["Programming Languages"],
+  "contributes": {
+    "languages": [
+      {
+        "id": "siemens-alarm-xml",
+        "aliases": ["Siemens Alarm XML", "siemens-alarm-xml"],
+        "extensions": [".ts"],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "siemens-alarm-xml",
+        "scopeName": "source.siemens-alarm-xml",
+        "path": "./syntaxes/alarm.tmLanguage.json"
+      }
+    ]
+  }
+}
