@@ -12,7 +12,7 @@ jobs:
         run: echo "Hello World" > test.txt
 
       - name: Upload artifact
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: test-artifact
           path: test.txt
