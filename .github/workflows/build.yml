@@ -1,34 +1,18 @@
-name: Build VSCode Extension
+name: Test Upload Artifact
 
-on:
-  push:
-    branches:
-      - main
+on: [push]
 
 jobs:
-  build:
+  upload-artifact:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v3
 
-      - name: Setup Node.js environment
-        uses: actions/setup-node@v3
+      - name: Create a test file
+        run: echo "Hello World" > test.txt
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v2
         with:
-          node-version: '18'
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Install vsce tool globally
-        run: npm install -g vsce
-
-      - name: Package VSCode extension
-        run: vsce package
-
-      - name: Upload VSIX package as artifact
-        uses: actions/upload-artifact@v3
-        with:
-          name: siemens-alarm-highlighter
-          path: '*.vsix'
+          name: test-artifact
+          path: test.txt
